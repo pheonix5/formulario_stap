@@ -1,0 +1,6 @@
+.form-control select{
+  width: 90%;
+  height: 30px;
+  position: relative;
+  overflow: hidden;
+}

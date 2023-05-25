@@ -1,0 +1,46 @@
+/* eslint-disable no-unused-vars */
+// Components
+import {GrFormNext, GrFormPrevious} from 'react-icons/gr'
+import UserForm from './components/UserForm'
+import ReviewForm from './components/ReviewForm'
+import Thanks from './components/Thanks'
+
+import './App.css'
+
+function App() {
+
+  const formComponents = [<UserForm/>, <ReviewForm/>, <Thanks/>];
+
+  return (
+   <div className='app'>
+
+    <div className="header">
+      <h2>Deixe Sua avaliação</h2>
+      <p>Ficamos felizes com a sua compra, ultilize o formulário abaixo para avaliar o produto</p>
+    </div>
+
+    <div className="form-container">
+      <p>etapas</p>
+      <form>
+        <div className="inputs-container"></div>
+        <div className="actions">
+          <button type='button'>
+            <GrFormPrevious/>
+            <span>Voltar</span>
+          </button>
+          <button type='submit'>
+            <span>Avançar</span>
+            <GrFormNext/>
+          </button>
+          <h1>Maria de Jesus Felix Dias</h1>
+          <h1>Nilza Felix Dias</h1>
+          <img src='data:image/jpeg;base64,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'/>
+        </div>
+      </form>
+    </div>
+
+   </div>
+  )
+}
+
+export default App

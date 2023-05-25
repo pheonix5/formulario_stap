@@ -1,0 +1,24 @@
+form {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.form-title {
+  font-weight: bold;
+}
+
+.form-question {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.form-option {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.form-option label {
+  margin-left: 5px;
+}

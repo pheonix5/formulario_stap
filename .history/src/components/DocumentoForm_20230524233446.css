@@ -1,0 +1,29 @@
+form {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.form-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-question {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-option {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.form-option input[type="radio"] {
+  margin-right: 5px;
+}
+
+.form-option label {
+  margin-right: 5px;
+}

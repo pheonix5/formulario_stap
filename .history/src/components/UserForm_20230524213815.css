@@ -1,0 +1,13 @@
+.select{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+  gap: 10px;
+}
+
+.select select{
+  font-size: medium;
+  font-weight: bold;
+  border-radius: 10px;
+}
