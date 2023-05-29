@@ -1,0 +1,26 @@
+import React from "react";
+import './MotoristaForm.css'
+
+const PlacaForm = ({ data, updateFieldHandler }) =>{
+  return (
+    <div>
+      <div className="select">
+        <label htmlFor="">Placa:</label>
+        <select
+          name="text"
+          id="name"
+          onChange={(e) => updateFieldHandler('name', e.target.value)}
+        >
+
+          <option  value="">JGV-5878</option>
+          <option  value="">MKR-3654</option>
+          <option  value="">JYV-2547</option>
+          <option  value="">KJS-8961</option>
+        </select>
+      </div>
+
+    </div>
+  )
+}
+
+export default PlacaForm;

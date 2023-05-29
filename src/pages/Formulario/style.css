@@ -1,5 +1,4 @@
 .app{
-  padding: 2rem;
 }
 
 /* Cabeçalho*/
@@ -17,10 +16,11 @@
 .form-container{
   max-width: 600px;
   margin: 0 auto;
-  height: 250px;
+  height: 400px;
   background-color: #FFF;
   padding: 1.5rem;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(26, 26, 28, 0.2) 0px 7px 29px 0px;
+  border-radius: 5px;
 }
 
 .form-container form{
