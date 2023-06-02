@@ -1,0 +1,48 @@
+
+.admin-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 100vh;
+  height: 100vh;
+}
+
+.table-actions .link-add:hover{
+  background-color: #CF1A0D;
+  transform: scale(1.05);
+}
+
+.btn-delete{
+  border: 1.5px dashed #121212;
+  color: #121212;
+  background-color: #FFF;
+  padding: 4px 8px;
+  border-radius: 2px;
+}
+
+.animate-pop{
+  animation-duration: 0.5s;
+  animation-name: animate-pop;
+}
+
+@keyframes animate-pop{
+  0%{
+    opacity: 0;
+    transform: scale(0.7, 0.7);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1)
+  }
+}
+
+.form label{
+  color: #FFF;
+  margin-bottom: 5px;
+}
+
+.listagem{
+  width: 100%;
+  max-width: 700px;
+}

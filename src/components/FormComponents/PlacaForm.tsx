@@ -6,7 +6,7 @@ import { collection, onSnapshot, query, orderBy } from 'firebase/firestore'
 
 type Placas ={
   id: string;
-  numero: String
+  placa: String
 }
 
 const PlacaForm = ({ data, updateFieldHandler }) =>{
@@ -14,8 +14,8 @@ const PlacaForm = ({ data, updateFieldHandler }) =>{
 
   useEffect(() => {
     
-    const motoristaRef = collection(db, "placa")
-    const queryRef = query(motoristaRef, orderBy("numero", 'asc'))
+    const placaRef = collection(db, "veiculos")
+    const queryRef = query(placaRef, orderBy("modelo", 'asc'))
 
     const unsub = onSnapshot(queryRef, (snapshot) =>{
       const lista: Placas[] = [];
@@ -23,11 +23,13 @@ const PlacaForm = ({ data, updateFieldHandler }) =>{
       snapshot.forEach((doc) => {
         lista.push({
           id: doc.id,
-          numero: doc.data().numero
+          placa: doc.data().placa
         });
       })
 
       setListaPlaca(lista);
+      console.log(lista);
+      
       
     })
   }, [])
@@ -48,9 +50,9 @@ const PlacaForm = ({ data, updateFieldHandler }) =>{
           { listaPlaca.map((item, index) => (
             <option
               key={index}
-              value={item.numero.toString()}
+              value={item.placa.toString()}
             >
-              {item.numero}
+              {item.placa}
             </option>
           ))}
 

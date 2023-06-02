@@ -18,7 +18,9 @@ export function Header(){
         <button onClick={handleLogout}>
           <BiLogOut size={28} color='#DB2629'/>
         </button>
-
+        <Link to="/admin">
+          CheckLists
+        </Link>
         <Link to="/motoristas">
           Motoristas
         </Link>

@@ -49,24 +49,27 @@ export default function AddMotorista(){
       </div>
 
       <form className="form"  onSubmit={handleRegisterMotorista}>
-    
+
+          <label>Nome: </label>
           <Input
           type='text'
-          placeholder='Nome: digite o nome'
+          placeholder='Digite o nome'
           value={nome}
           onChange={ (e) => setNome(e.target.value) }
           />
 
+          <label>CPF: </label>
           <Input
             type='text'
-            placeholder='CPF: Ex: xxx.xxx.xxx-xx'
+            placeholder='Ex: xxx.xxx.xxx-xx'
             value={cpf}
             onChange={ (e) => setCpf(e.target.value)}
           />
 
+          <label>Telefone: </label>
           <Input
             type='text'
-            placeholder='TEL: Ex: DDD xxxxx-xxxx'
+            placeholder='Ex: DDD xxxxx-xxxx'
             value={telefone}
             onChange={ (e) => setTelefone(e.target.value)}
           />

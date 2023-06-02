@@ -7,6 +7,8 @@ import Admin from './pages/Admin'
 import Error from './pages/Error'
 import Motoristas from './pages/Motoristas';
 import AddMotorista from './pages/AddMotorista';
+import Veiculos from './pages/Veiculos';
+import AddVeiculo from './pages/AddVeiculo';
 
 import Private from './routes/Private'
 
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
   {
     path: '/addMotorista',
     element: <Private> <AddMotorista/> </Private>
+  },
+  {
+    path: '/veiculos',
+    element: <Private> <Veiculos/> </Private>
+  },
+  {
+    path: '/addVeiculo',
+    element: <Private> <AddVeiculo/> </Private>
   },
   {
     path: '*',

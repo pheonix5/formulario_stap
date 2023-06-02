@@ -25,6 +25,8 @@
   margin-right: 14px;
   color: #21242D;
   transition: color 0.2s;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .nav-header a:hover{

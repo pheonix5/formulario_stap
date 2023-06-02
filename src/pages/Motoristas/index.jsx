@@ -1,8 +1,9 @@
 import React,{ useState, useEffect } from "react";
 import './motoristas.css'
 import { BsPersonFillAdd } from 'react-icons/bs'
-import { FiTrash2 } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
+
+import { Table, Button } from 'react-bootstrap'
 
 import { Header } from '../../components/Header'
 
@@ -50,24 +51,29 @@ export default function Motoristas(){
         </Link>
       </div>
 
-      { motoristas.map((item, index) => (
-        <article
-          key={index}
-          className="list animate-pop"
-          style={{ backgroundColor: "#FFF", color: "#121212" }}
-        >
-        
-          <p>Nome: {item.nome}</p>
-          <p>CPF: {item.cpf}</p>
-          <p>Tel: {item.telefone}</p>
-          <div>
-            <button className="btn-delete" onClick={() => handleDeleteMotorista(item.id)}>
-              <FiTrash2 size={18} color="#121212"/>
-            </button>
-          </div>
-
-        </article>
-      )) }
+    <div className="listagem animated-pop">
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th>Opções</th>
+          </tr>
+        </thead>
+        <tbody>
+          { motoristas.map((item, index) => (
+            <tr key={index}>
+              <td>{item.nome}</td>
+              <td>{item.cpf}</td>
+              <td>{item.telefone}</td>
+              <td><Button variant="outline-danger" onClick={() => handleDeleteMotorista(item.id)}>Excluir</Button></td>
+            </tr>
+          )) }
+        </tbody>
+      </Table>
+    </div>
+      
     </div>
   )
 }

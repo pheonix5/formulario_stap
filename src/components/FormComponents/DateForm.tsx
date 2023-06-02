@@ -1,39 +1,56 @@
 import React, { useEffect, useState } from "react";
 import './DateForm.css'
 
-const DateForm = ({ data, updateFieldHandler }) =>{
+const DateForm = ({ data, updateFieldHandler }) => {
   const [dataMaxima, setDataMaxima] = useState("");
 
   useEffect(() => {
-    function dataMax(){
-      let dataAtual = new Date();
-      let dia = dataAtual.getDate();
-      let mes = dataAtual.getMonth() + 1;
-      let ano = dataAtual.getFullYear();
-      let dataFormatada = `${ano}-0${mes}-${dia}`;
-      setDataMaxima(dataFormatada)
+    function dataMax() {
+      const dataAtual = new Date();
+      dataAtual.setDate(dataAtual.getDate() + 1); // Adiciona 1 dia para garantir que a data máxima seja correta
+
+      const dia = dataAtual.getDate().toString().padStart(2, "0");
+      const mes = (dataAtual.getMonth() + 1).toString().padStart(2, "0");
+      const ano = dataAtual.getFullYear();
+
+      const dataFormatada = `${ano}-${mes}-${dia}`;
+      setDataMaxima(dataFormatada);
     }
+
     dataMax();
-  }, [])
-  
+  }, []);
+
+  function formatarDataParaBanco(data) {
+    const dia = data.getDate().toString().padStart(2, "0");
+    const mes = (data.getMonth() + 1).toString().padStart(2, "0");
+    const ano = data.getFullYear();
+    return `${dia}/${mes}/${ano}`;
+  }
+
+  function formatarDataParaInput(data) {
+    const dia = data.getDate().toString().padStart(2, "0");
+    const mes = (data.getMonth() + 1).toString().padStart(2, "0");
+    const ano = data.getFullYear();
+    return `${ano}-${mes}-${dia}`;
+  }
+
   return (
     <div>
       <div className="date">
         <label htmlFor="">Data:</label>
         <input
           type="date"
-          value={data.date || ""}
+          value={formatarDataParaInput(new Date(data.date)) || ""}
           id="calendario"
           max={dataMaxima}
-          onChange={(e) => updateFieldHandler('date', e.target.value)}
+          onChange={(e) =>
+            updateFieldHandler("date", formatarDataParaBanco(new Date(e.target.value)))
+          }
           required
-        >
-        
-        </input>
+        ></input>
       </div>
-
     </div>
-  )
+  );
 }
 
 export default DateForm;
