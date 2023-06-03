@@ -6,9 +6,12 @@ import { db } from '../../services/firebaseConnection';
 import { 
   addDoc,
   collection,
-  Timestamp
+  serverTimestamp,
+  FieldValue
  } from 'firebase/firestore'
 
+import moment from 'moment';
+import 'moment-timezone';
 
 import { toast } from 'react-toastify'
 
@@ -30,8 +33,12 @@ import ManifestoObservacaoForm from '../../components/FormComponents/ManifestoOb
 import { useForm } from '../../hooks/useForm'
 import './style.css'
 
+const dataFromServer = firebase.firestore.FildValue.serverTimestamp();
+const dateGMT3 = moment(dataFromServer).tz('GMT-3').format();
+
 const formTemplate ={
   motorista: "",
+  date: dateGMT3,
   placa: "",
   crlv: "",
   antt: "",
@@ -76,7 +83,7 @@ export default function Formulario() {
     
     addDoc(collection(db, "formularios"), {
       motorista: data.motorista,
-      date: Timestamp.fromDate(new Date()),
+      date: data.date,
       placa: data.placa,
       crlv: data.crlv,
       antt: data.antt,

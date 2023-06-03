@@ -6,7 +6,7 @@ import { Header } from '../../components/Header'
 
 import { Table, Button } from 'react-bootstrap'
 
-import { format, startOfDay } from 'date-fns'
+import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 
 import { db } from '../../services/firebaseConnection'
@@ -75,7 +75,7 @@ export default function Admin(){
       ? checkList.filter((list) =>
           list.motorista.toLowerCase().includes(lowerBusca) &&
           list.placa.toLowerCase().includes(placa.toLowerCase()) &&
-          startOfDay(list.date.toDate()).toISOString().includes(data)
+          list.date.includes(data)
         )
       : checkList;
   }, [busca, placa, data, checkList]);
@@ -88,8 +88,8 @@ export default function Admin(){
     const dateCheck = new Date(date.seconds * 1000);
 
     return format(
+      new Date(),
       dateCheck,
-      "dd/MM/yyyy HH:mm",
       {
         locale: ptBR
       }

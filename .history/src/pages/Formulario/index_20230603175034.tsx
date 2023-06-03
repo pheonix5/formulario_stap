@@ -6,9 +6,8 @@ import { db } from '../../services/firebaseConnection';
 import { 
   addDoc,
   collection,
-  Timestamp
+  serverTimestamp
  } from 'firebase/firestore'
-
 
 import { toast } from 'react-toastify'
 
@@ -32,6 +31,7 @@ import './style.css'
 
 const formTemplate ={
   motorista: "",
+  date: new Date,
   placa: "",
   crlv: "",
   antt: "",
@@ -76,7 +76,7 @@ export default function Formulario() {
     
     addDoc(collection(db, "formularios"), {
       motorista: data.motorista,
-      date: Timestamp.fromDate(new Date()),
+      date: data.date,
       placa: data.placa,
       crlv: data.crlv,
       antt: data.antt,

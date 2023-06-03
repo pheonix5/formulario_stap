@@ -6,7 +6,7 @@ import { Header } from '../../components/Header'
 
 import { Table, Button } from 'react-bootstrap'
 
-import { format, startOfDay } from 'date-fns'
+import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 
 import { db } from '../../services/firebaseConnection'
@@ -24,7 +24,7 @@ export default function Admin(){
 
   useEffect(() => {
     const checkListRef = collection(db, 'formularios');
-    const queryRef = query(checkListRef, orderBy('date', 'desc'));
+    const queryRef = query(checkListRef, orderBy('date', 'asc'));
 
     const unsub = onSnapshot(queryRef, (snapshopt) => {
       let lista = [];
@@ -75,7 +75,7 @@ export default function Admin(){
       ? checkList.filter((list) =>
           list.motorista.toLowerCase().includes(lowerBusca) &&
           list.placa.toLowerCase().includes(placa.toLowerCase()) &&
-          startOfDay(list.date.toDate()).toISOString().includes(data)
+          list.date.includes(data)
         )
       : checkList;
   }, [busca, placa, data, checkList]);

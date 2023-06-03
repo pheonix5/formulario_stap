@@ -6,7 +6,7 @@ import { Header } from '../../components/Header'
 
 import { Table, Button } from 'react-bootstrap'
 
-import { format, startOfDay } from 'date-fns'
+import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 
 import { db } from '../../services/firebaseConnection'

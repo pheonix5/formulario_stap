@@ -6,7 +6,7 @@ import { Header } from '../../components/Header'
 
 import { Table, Button } from 'react-bootstrap'
 
-import { format, startOfDay } from 'date-fns'
+import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 
 import { db } from '../../services/firebaseConnection'
@@ -75,7 +75,7 @@ export default function Admin(){
       ? checkList.filter((list) =>
           list.motorista.toLowerCase().includes(lowerBusca) &&
           list.placa.toLowerCase().includes(placa.toLowerCase()) &&
-          startOfDay(list.date.toDate()).toISOString().includes(data)
+          formatDate(list.date).includes(data)
         )
       : checkList;
   }, [busca, placa, data, checkList]);
@@ -103,7 +103,7 @@ export default function Admin(){
       <div className="search-input">
       <input type="text" placeholder="Motorista" value={busca} onChange={(e) => setBusca(e.target.value)}/>
       <input type="text" placeholder="Placa" value={placa} onChange={(e) => setPlaca(e.target.value)}/>
-      <input type="date" value={data} onChange={(e) => setData(e.target.value)}/>
+      <input type="date" value={formatDate(data)} onChange={(e) => setData(e.target.value)}/>
 
       </div>
 

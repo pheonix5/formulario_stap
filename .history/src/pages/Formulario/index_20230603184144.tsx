@@ -30,6 +30,10 @@ import ManifestoObservacaoForm from '../../components/FormComponents/ManifestoOb
 import { useForm } from '../../hooks/useForm'
 import './style.css'
 
+
+console.log(dataAtual);
+
+
 const formTemplate ={
   motorista: "",
   placa: "",
@@ -76,7 +80,7 @@ export default function Formulario() {
     
     addDoc(collection(db, "formularios"), {
       motorista: data.motorista,
-      date: Timestamp.fromDate(new Date()),
+      date: data.date,
       placa: data.placa,
       crlv: data.crlv,
       antt: data.antt,

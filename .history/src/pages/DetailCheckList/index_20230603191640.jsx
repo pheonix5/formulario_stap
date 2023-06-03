@@ -5,9 +5,6 @@ import { db } from '../../services/firebaseConnection'
 
 import html2pdf from "html2pdf.js";
 
-import { format } from 'date-fns'
-import { ptBR } from 'date-fns/locale'
-
 import { Header } from '../../components/Header'
 
 import './detailchecklist.css'

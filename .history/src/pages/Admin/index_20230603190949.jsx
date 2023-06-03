@@ -6,7 +6,7 @@ import { Header } from '../../components/Header'
 
 import { Table, Button } from 'react-bootstrap'
 
-import { format, startOfDay } from 'date-fns'
+import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 
 import { db } from '../../services/firebaseConnection'
@@ -17,7 +17,7 @@ import { collection, orderBy, onSnapshot, query } from 'firebase/firestore'
 export default function Admin(){
   const [checkList, setChekList] = useState([]);
   const [placa, setPlaca] = useState('');
-  const [data, setData] = useState('');
+  const [data, setData] = useState(new date);
   const [busca, setBusca] = useState('');
 
   const navigate = useNavigate();
@@ -75,7 +75,7 @@ export default function Admin(){
       ? checkList.filter((list) =>
           list.motorista.toLowerCase().includes(lowerBusca) &&
           list.placa.toLowerCase().includes(placa.toLowerCase()) &&
-          startOfDay(list.date.toDate()).toISOString().includes(data)
+          formatDate(list.date).includes(data)
         )
       : checkList;
   }, [busca, placa, data, checkList]);

@@ -5,9 +5,6 @@ import { db } from '../../services/firebaseConnection'
 
 import html2pdf from "html2pdf.js";
 
-import { format } from 'date-fns'
-import { ptBR } from 'date-fns/locale'
-
 import { Header } from '../../components/Header'
 
 import './detailchecklist.css'
@@ -52,18 +49,6 @@ const DetailCheckList = () => {
     }
   };
 
-  function formatDate(date){
-    const dateCheck = new Date(date.seconds * 1000);
-
-    return format(
-      dateCheck,
-      "dd/MM/yyyy HH:mm",
-      {
-        locale: ptBR
-      }
-    )
-  }
-
   if (!itemDetails) {
     return <div className="container"><h1>Carregando detalhes do item...</h1></div>;
   }
@@ -85,7 +70,7 @@ const DetailCheckList = () => {
 
           <div>
             <h3>Data:</h3>
-            <p>{formatDate(itemDetails.date)}</p>
+            <p>{itemDetails.date}</p>
           </div>
 
           <div>

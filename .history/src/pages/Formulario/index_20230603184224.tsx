@@ -30,6 +30,10 @@ import ManifestoObservacaoForm from '../../components/FormComponents/ManifestoOb
 import { useForm } from '../../hooks/useForm'
 import './style.css'
 
+
+
+
+
 const formTemplate ={
   motorista: "",
   placa: "",

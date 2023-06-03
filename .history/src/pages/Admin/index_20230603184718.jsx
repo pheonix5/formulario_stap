@@ -6,9 +6,6 @@ import { Header } from '../../components/Header'
 
 import { Table, Button } from 'react-bootstrap'
 
-import { format, startOfDay } from 'date-fns'
-import { ptBR } from 'date-fns/locale'
-
 import { db } from '../../services/firebaseConnection'
 import { collection, orderBy, onSnapshot, query } from 'firebase/firestore'
 
@@ -75,25 +72,13 @@ export default function Admin(){
       ? checkList.filter((list) =>
           list.motorista.toLowerCase().includes(lowerBusca) &&
           list.placa.toLowerCase().includes(placa.toLowerCase()) &&
-          startOfDay(list.date.toDate()).toISOString().includes(data)
+          list.date.includes(data)
         )
       : checkList;
   }, [busca, placa, data, checkList]);
 
   function handleDetail(item){
     navigate(`/detailCheckList/${item}`);
-  }
-
-  function formatDate(date){
-    const dateCheck = new Date(date.seconds * 1000);
-
-    return format(
-      dateCheck,
-      "dd/MM/yyyy HH:mm",
-      {
-        locale: ptBR
-      }
-    )
   }
 
   return(
@@ -122,7 +107,7 @@ export default function Admin(){
               <tr key={index}>
                 <td>{item.motorista}</td>
                 <td>{item.placa}</td>
-                <td>{formatDate(item.date)}</td>
+                <td>{item.date.toString()}</td>
                 <td><Button onClick={() => handleDetail(item.id)}>Detalhes</Button></td>
               </tr>
             ))}
