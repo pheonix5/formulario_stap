@@ -1,0 +1,34 @@
+/* Estilos básicos */
+.app {
+  background-color: #f9fafc;
+  min-height: 100vh;
+}
+
+/* Cabeçalho */
+
+.radio-label input[type="radio"] {
+  margin-right: 5px;
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -30px;
+}
+
+.yesOrNot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-right: 10px;
+  height: 30px;
+  font-size: 17px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+input[type="radio"] {
+  transform: scale(1.5); /* Aumenta o tamanho em 1.5 vezes */
+}

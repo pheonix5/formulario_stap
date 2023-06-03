@@ -1,0 +1,21 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', sans-serif;
+  box-sizing: border-box;
+}
+
+body{
+  background: linear-gradient(#232630, #050507);
+  height: 100vh;
+  overflow-y: auto;
+}
+
+button{
+  cursor: pointer;
+}
+
+a{
+  text-decoration: none;
+}

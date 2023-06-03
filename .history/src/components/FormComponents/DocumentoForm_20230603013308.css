@@ -1,0 +1,63 @@
+/* Estilos básicos */
+.app {
+  background-color: #f9fafc;
+  min-height: 100vh;
+}
+
+/* Cabeçalho */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 4px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.label {
+  flex-basis: 200px;
+}
+
+.radio-options {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  padding-right: 5px;
+  width: 100%;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  width: 100%;
+}
+
+.radio-label input[type="radio"] {
+  margin-right: 5px;
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -30px;
+}
+
+.yesOrNot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-right: 10px;
+  height: 30px;
+  font-size: 17px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}

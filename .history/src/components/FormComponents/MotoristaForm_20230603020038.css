@@ -1,0 +1,20 @@
+.select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 40%;
+  height: 40px;
+}
+
+.select select {
+  font-size: 16px;
+  font-weight: bold;
+ 
+  padding: 5px;
+  border: 2px solid #c0c0c0;
+  border-radius: 4px;
+}
+
+.select label {
+  font-size: 18px;
+}

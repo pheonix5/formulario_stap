@@ -1,0 +1,49 @@
+
+.content{
+  margin-top: 20px;
+  background-color: #FAFAFA;
+  margin: 20px 15px;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.detail-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  padding-left: 20px;
+  margin-top: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.header-center{
+  display: flex;
+  justify-content: center;
+  width: 100bh;
+}
+.container button{
+  position: absolute;
+  right: 150px;
+  top: 100px;
+}

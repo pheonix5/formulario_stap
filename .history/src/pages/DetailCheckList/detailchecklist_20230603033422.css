@@ -1,0 +1,8 @@
+.container{
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  min-height: 100vh;
+  overflow-y: auto;
+  justify-content: center;
+}
