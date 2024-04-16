@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 import { Header } from '../../components/Header'
 
+import Teste from "../../components/Teste";
+
 import { Table, Button } from 'react-bootstrap'
 
 import { format, startOfDay } from 'date-fns'

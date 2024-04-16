@@ -65,7 +65,7 @@ const formTemplate ={
 export default function Formulario() {
   const [data, setData] = useState(formTemplate);
 
-  const updateFieldHandler = (key, value) => {
+  const updateFieldHandler = (key: string , value: string) => {
     setData((prev) => {
       return {...prev, [key]: value};
     })

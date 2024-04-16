@@ -36,7 +36,7 @@ const DetailCheckList = () => {
     fetchItemDetails();
   }, [id]);
 
-  function handleExportPDF(){
+  function handleExportPDF() {
     const contentElement = contentRef.current;
 
     if (contentElement) {
@@ -52,7 +52,7 @@ const DetailCheckList = () => {
     }
   };
 
-  function formatDate(date){
+  function formatDate(date) {
     const dateCheck = new Date(date.seconds * 1000);
 
     return format(
@@ -69,11 +69,12 @@ const DetailCheckList = () => {
   }
 
   return (
-    
+
     <div className="container">
-      <Header/>
-      <Button className="download" variant="success" onClick={handleExportPDF}>Baixar-PDF</Button>
+      <Header />
+
       <div className="content" ref={contentRef}>
+        <Button className="download" variant="success" onClick={handleExportPDF}>Baixar-PDF</Button>
         <h2>Detalhes do Check List </h2>
 
         <div className="detail-list">
@@ -139,11 +140,11 @@ const DetailCheckList = () => {
               </div>
             )}
             {itemDetails.observacao && (
-            <div>
-              <h3>Observacão:</h3>
-              <p>{itemDetails.observacao}</p>
-            </div>
-          )}
+              <div>
+                <h3>Observacão:</h3>
+                <p>{itemDetails.observacao}</p>
+              </div>
+            )}
           </div>
 
           <div>
@@ -153,36 +154,36 @@ const DetailCheckList = () => {
             </ul>
           </div>
 
-          { (itemDetails.farois 
-            || itemDetails.lanternaTrazeira 
-            || itemDetails.luzRe 
-            || itemDetails.luzFreio 
+          {(itemDetails.farois
+            || itemDetails.lanternaTrazeira
+            || itemDetails.luzRe
+            || itemDetails.luzFreio
             || itemDetails.setas
             || itemDetails.retrovisores
             || itemDetails.pneus
             || itemDetails.avariasLateralBau
             || itemDetails.ruidosBarulhos) && (
-            <div>
-              <h4>Outros Problemas:</h4>
-              <ul>
-                <li>Farois: {itemDetails.farois === true ? 'sim' : 'não'}</li>
-                <li>Lanterna Trazeira: {itemDetails.lanternaTrazeira === true ? 'sim' : 'não'}</li>
-                <li>Luz de Ré: {itemDetails.luzRe === true ? 'sim' : 'não'}</li>
-                <li>Luz de Freio: {itemDetails.luzFreio === true ? 'sim' : 'não'}</li>
-                <li>Setas: {itemDetails.setas === true ? 'sim' : 'não'}</li>
-                <li>Retrovisores: {itemDetails.retrovisores === true ? 'sim' : 'não'}</li>
-                <li>Avarias na Lateral ou Baú: {itemDetails.avariasLateralBau === true ? 'sim' : 'não'}</li>
-                <li>Ruídos e Barulhos: {itemDetails.ruidosBarulhos === true ? 'sim' : 'não'}</li>
-              </ul>
-            </div>
-          )} 
+              <div>
+                <h4>Outros Problemas:</h4>
+                <ul>
+                  <li>Farois: {itemDetails.farois === true ? 'sim' : 'não'}</li>
+                  <li>Lanterna Trazeira: {itemDetails.lanternaTrazeira === true ? 'sim' : 'não'}</li>
+                  <li>Luz de Ré: {itemDetails.luzRe === true ? 'sim' : 'não'}</li>
+                  <li>Luz de Freio: {itemDetails.luzFreio === true ? 'sim' : 'não'}</li>
+                  <li>Setas: {itemDetails.setas === true ? 'sim' : 'não'}</li>
+                  <li>Retrovisores: {itemDetails.retrovisores === true ? 'sim' : 'não'}</li>
+                  <li>Avarias na Lateral ou Baú: {itemDetails.avariasLateralBau === true ? 'sim' : 'não'}</li>
+                  <li>Ruídos e Barulhos: {itemDetails.ruidosBarulhos === true ? 'sim' : 'não'}</li>
+                </ul>
+              </div>
+            )}
 
 
-          
+
 
         </div>
       </div>
-      
+
     </div>
   );
 };
