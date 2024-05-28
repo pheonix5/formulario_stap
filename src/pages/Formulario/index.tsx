@@ -129,7 +129,7 @@ export default function Formulario() {
     <ManifestoObservacaoForm data={data} updateFieldHandler={updateFieldHandler}/>
   ];
 
-  const { currentStep, currentComponent, changeStep, isLastStep, isFirstStep } = useForm(formComponents);
+  const { currentStep, currentComponent, changeStep, isLastStep, isFirstStep, stepsLength } = useForm(formComponents);
 
   return (
    <div className='app'>
@@ -166,6 +166,9 @@ export default function Formulario() {
 
         </div>
       </form>
+      <div>
+        <p>Página {currentStep} de {stepsLength}</p>
+      </div>
     </div>
 
    </div>
